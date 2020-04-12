@@ -7,7 +7,7 @@ module Vehicles
 
     def call
       context.vehicles = search_vehicles
-      context.total_count = search_vehicles.count
+      context.total_count = search_vehicles&.count
     end
 
     private
