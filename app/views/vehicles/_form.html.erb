@@ -1,0 +1,29 @@
+<%= form_with url: vehicles_path, local: true, method: :get do |f| %>
+  <div class="form_group">
+    <%= f.label 'Filter by Color:' %>
+    <%= f.select(:color, options_for_select(Vehicle.colors.map { |color| color }.sort), include_blank: 'Select color', class: "form_input") %>
+  </div>
+  <div class="form_group">
+    <%= f.label 'Filter by Size:' %>
+    <%= f.select(:size , options_for_select(Vehicle.sizes.map { |size| size }), include_blank: 'Select size', class: "form_input") %>
+  </div>
+  <div class="form_group">
+    <%= f.label 'Mileage (Min):' %>
+    <%= f.number_field(:min_mileage, min: 1000, max: 100000, step: 1000) %>
+  </div>
+  <div class="form_group">
+    <%= f.label 'Mileage (Max):' %>
+    <%= f.number_field(:max_mileage, min: 1000, max: 100000, step: 1000) %>
+  </div>
+  <div class="form_group">
+    <%= f.label 'Price (Min):' %>
+    <%= f.number_field(:min_price, min: 1000, max: 100000, step: 1000) %>
+  </div>
+  <div class="form_group">
+    <%= f.label 'Price (Max):' %>
+    <%= f.number_field(:max_price, min: 1000, max: 100000, step: 1000) %>
+  </div>
+  <div class="form_group">
+    <%= f.submit "Search", class: "btn btn_primary" %>
+  </div>
+<% end %>

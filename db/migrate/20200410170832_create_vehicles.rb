@@ -6,6 +6,7 @@ class CreateVehicles < ActiveRecord::Migration[5.2]
       t.string :model
       t.string :model_series
       t.string :color
+      t.string :size
       t.integer :mileage
       t.integer :price
       t.string :city

@@ -1,0 +1,11 @@
+<h2>Carshop Application</h2>
+
+<% if @errors.any? %>
+  <%= render partial: 'vehicles/errors' %>
+<% end %>
+
+<%= render partial: 'vehicles/form' %>
+
+<%= render partial: 'vehicles/filters' %>
+
+<%= render partial: 'vehicles/result', collection: @vehicles %>

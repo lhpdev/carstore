@@ -1,0 +1,22 @@
+<h2>Results:</h2>
+
+<% if @vehicles.present? %>
+  <p><%=@vehicles.count %> result(s)</p>
+  <table>
+    <tr>
+      <th>Year</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Model Series</th>
+      <th>Color</th>
+      <th>Size (Type)</th>
+      <th>Price</th>
+      <th>Mileage</th>
+      <th>City</th>
+      <th>State</th>
+    </tr>
+    <%= render partial: 'vehicles/vehicle', collection: @vehicles %>
+  </table>
+<% else %>
+  <p> Nothing to show </p>
+<% end %>

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_170832) do
     t.string "model"
     t.string "model_series"
     t.string "color"
+    t.string "size"
     t.integer "mileage"
     t.integer "price"
     t.string "city"
