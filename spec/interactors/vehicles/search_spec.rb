@@ -5,7 +5,7 @@ module Vehicles
     subject { Search.call(search_params: search_params) }
 
     describe 'testing returned vehicles within result' do
-      let(:vehicle) { create(:vehicle) }
+      let!(:vehicle) { create(:vehicle) }
 
       context 'with vehicle found' do
         context 'testing search by color' do
@@ -16,6 +16,7 @@ module Vehicles
           }
 
           it 'returns correcly search result' do
+            expect(subject.total_count).to eq(1)
             expect(subject.vehicles).to include(vehicle)
           end
         end
@@ -28,6 +29,7 @@ module Vehicles
           }
 
           it 'returns correcly search result' do
+            expect(subject.total_count).to eq(1)
             expect(subject.vehicles).to include(vehicle)
           end
         end
@@ -41,6 +43,7 @@ module Vehicles
           }
 
           it 'returns correcly search result' do
+            expect(subject.total_count).to eq(1)
             expect(subject.vehicles).to include(vehicle)
           end
         end
@@ -54,6 +57,7 @@ module Vehicles
           }
 
           it 'returns correcly search result' do
+            expect(subject.total_count).to eq(1)
             expect(subject.vehicles).to include(vehicle)
           end
         end
@@ -68,6 +72,7 @@ module Vehicles
           }
 
           it 'returns correcly search result' do
+            expect(subject.total_count).to eq(0)
             expect(subject.vehicles).to_not include(vehicle)
           end
         end
@@ -80,6 +85,7 @@ module Vehicles
           }
 
           it 'returns correcly search result' do
+            expect(subject.total_count).to eq(0)
             expect(subject.vehicles).to_not include(vehicle)
           end
         end
@@ -93,6 +99,7 @@ module Vehicles
           }
 
           it 'returns correcly search result' do
+            expect(subject.total_count).to eq(0)
             expect(subject.vehicles).to_not include(vehicle)
           end
         end
@@ -106,6 +113,7 @@ module Vehicles
           }
 
           it 'returns correcly search result' do
+            expect(subject.total_count).to eq(0)
             expect(subject.vehicles).to_not include(vehicle)
           end
         end
