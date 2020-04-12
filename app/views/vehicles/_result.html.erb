@@ -1,22 +1,29 @@
 <h2>Results:</h2>
 
 <% if @vehicles.present? %>
-  <p><%=@vehicles.count %> result(s)</p>
+  <p><%= @total_count %> result(s)</p>
+  <%= paginate @vehicles %>
   <table>
-    <tr>
-      <th>Year</th>
-      <th>Make</th>
-      <th>Model</th>
-      <th>Model Series</th>
-      <th>Color</th>
-      <th>Size (Type)</th>
-      <th>Price</th>
-      <th>Mileage</th>
-      <th>City</th>
-      <th>State</th>
-    </tr>
-    <%= render partial: 'vehicles/vehicle', collection: @vehicles %>
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Model Series</th>
+        <th>Color</th>
+        <th>Size (Type)</th>
+        <th>Price</th>
+        <th>Mileage</th>
+        <th>City</th>
+        <th>State</th>
+      </tr>
+    </thead>
+
+    <tbody id="vehicles">
+      <%= render partial: 'vehicles/vehicle', collection: @vehicles %>
+    </tbody>
   </table>
+  <%= paginate @vehicles %>
 <% else %>
   <p> Nothing to show </p>
 <% end %>
