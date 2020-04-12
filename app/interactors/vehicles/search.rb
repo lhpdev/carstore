@@ -16,7 +16,7 @@ module Vehicles
       @vehicles = search_by_size
       @vehicles = search_by_mileage
       @vehicles = search_by_price
-      @vehicles.order('year') 
+      @vehicles&.order('year') 
     end
 
     def search_by_color
