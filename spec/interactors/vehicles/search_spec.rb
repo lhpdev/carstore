@@ -93,7 +93,6 @@ module Vehicles
         context 'testing search by mileage' do
           let(:search_params) {
             {
-              min_mileage: 10000,
               max_mileage: 20000
             }
           }
@@ -107,7 +106,6 @@ module Vehicles
         context 'testing search by price' do
           let(:search_params) {
             {
-              min_price: 10000,
               max_price: 10000
             }
           }

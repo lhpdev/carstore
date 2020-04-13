@@ -5,14 +5,8 @@ class VehiclesController < ApplicationController
     if @errors.empty?
       result = Vehicles::Search.call(search_params: search_params)
 
-      if result.success? && result.vehicles.present?
-        @total_count = result.total_count
-        @vehicles = Kaminari.paginate_array(result.vehicles).page(params[:page])
-      else
-        @vehicles = nil
-      end
-    else
-      @vehicles = nil
+      @total_count = result.total_count
+      @vehicles = Kaminari.paginate_array(result.vehicles).page(params[:page])
     end
   end
 
